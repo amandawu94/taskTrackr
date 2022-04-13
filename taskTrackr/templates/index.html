@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    To Do
+{% endblock %}
+
+{% block main %}
+    <p>Things I Need To Do:</p>
+
+    <ul>
+    <table class="table table-striped">
+        <thead>
+            <th>TASKS</th>
+            <th>ALLOTED TIME</th>
+         </thead>
+         <tbody>
+            <tr>
+            {% for row in rows %}
+                <tr>
+                    <td>{{row.task}}</td>
+                    <td>{{row.due_date}}</td>
+                    <tr>
+            {% endfor %}
+            <tr>
+        <tbody>
+    </ul>
+{% endblock %}

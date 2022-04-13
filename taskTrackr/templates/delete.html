@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Delete Task
+{% endblock %}
+
+{% block main %}
+
+<form action="/delete" method="post">
+  <div class="form-group">
+    <select name="task" class="form-control">
+      <option disable selected value>Task</option>
+      {% for dict in tasklists %}
+      {% for key, task in dict.items() %}
+      <option value="{{task}}">{{task}}</option>
+      {% endfor %}
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <input autocomplete="off" autofocus class="form-control" name="due_date" placeholder="Time Allotted (in days)" type="text">
+  </div>
+  <button class="btn btn-primary" type="submit">Delete</button>
+</form>
+
+{% endblock %}

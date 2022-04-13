@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  History
+{% endblock %}
+
+{% block main %}
+
+<ul>
+  <table class="table table-striped">
+    <head>
+      <th>Task</th>
+      <th>Due Date</th>
+    </head>
+    <body>
+      {% for row in rows %}
+      <tr>
+        <td>{{row.task}}</td>
+        <td>{{row.due_date}}</td>
+      </tr>
+      {% endfor %}
+    </body>
+  </table>
+</ul>
+{% endblock %}
